@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('place_initial');
             $table->string('place_occupe');
             $table->string('prix');
+            $table->boolean('delete')->default(0);
+
             $table->timestamps();
         });
     }

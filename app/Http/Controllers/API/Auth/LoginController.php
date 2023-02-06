@@ -11,8 +11,13 @@ use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
     public function login(Request $request){
-
+        $request->validate([
+            'email' => 'required|unique:users',
+            'password' => 'required',
+        ]);
         $user = User::where('email', $request->email)->first();
+        // dd($user);
+        return $user;
         if($user && Hash::check($request->password, $user->password))
         {
 
@@ -21,7 +26,7 @@ class LoginController extends Controller
                 'user' => $user,
                 'token' => $token
             ];
-        return response($response, 201);
+         return response()->json($response, 201);
         }else{
             return response([
                 'message' => ['These credentials do not match our records']

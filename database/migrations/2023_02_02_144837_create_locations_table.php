@@ -21,6 +21,8 @@ return new class extends Migration
             $table->date('dateD');
             $table->date('DateF');
             $table->boolean('statut')->default(0);
+            $table->boolean('delete')->default(0);
+
             $table->timestamps();
         });
     }

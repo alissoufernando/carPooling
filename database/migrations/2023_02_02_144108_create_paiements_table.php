@@ -18,6 +18,8 @@ return new class extends Migration
             $table->boolean('statut')->default(0);
             $table->longText('dataSend');
             $table->longText('dataReceiv');
+            $table->boolean('delete')->default(0);
+
             $table->timestamps();
         });
     }

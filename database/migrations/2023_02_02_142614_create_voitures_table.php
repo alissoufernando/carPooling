@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('couleur');
             $table->string('place');
             $table->integer('prix');
+            $table->boolean('delete')->default(0);
+
             $table->timestamps();
         });
     }

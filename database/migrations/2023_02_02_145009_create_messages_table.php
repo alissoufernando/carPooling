@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('rom_chat_id')->constrained('rom_Chats')->onUpdate('cascade')->onDelete('cascade');
             $table->longText('contenu');
+            $table->boolean('delete')->default(0);
+
             $table->timestamps();
         });
     }

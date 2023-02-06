@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('factures', function (Blueprint $table) {
             $table->id();
+            $table->boolean('delete')->default(0);
+
             $table->timestamps();
         });
     }

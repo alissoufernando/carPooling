@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('prix_total');
             $table->string('marque');
             $table->boolean('statut')->default(0);
+            $table->boolean('delete')->default(0);
+
             $table->timestamps();
         });
     }
